@@ -1,7 +1,7 @@
 package com.jd.bcp.jdpayBusiness.link.baitiaoQuickLink;
 
 import com.jd.bcp.common.annotation.NodeScript;
-import com.jd.bcp.common.service.ScriptExecutor;
+import com.jd.bcp.common.service.JavaExecutor;
 import com.jd.bcp.common.utils.GsonUtil;
 import com.jd.bcp.common.vo.CustomAction;
 import com.jd.bcp.common.vo.ExecuteContext;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @NodeScript(nodeId = "pay")
-public class Script2 implements ScriptExecutor {
+public class Script2 implements JavaExecutor {
 
     @Override
     public List<CustomAction<?>> execute(ExecuteContext executeContext) {
