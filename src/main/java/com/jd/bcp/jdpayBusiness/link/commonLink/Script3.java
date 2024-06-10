@@ -8,12 +8,9 @@ import com.jd.bcp.export.custom.ReportAlertCustomVo;
 import com.jd.bcp.export.enums.CustomActionTypeEnum;
 import com.jd.bcp.export.service.JavaExecutor;
 import com.jd.bcp.export.vo.ExecuteContext;
-import com.jd.bcp.jdpayBusiness.common.User;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @NodeScript(nodeId = "preparePay")
 public class Script3 implements JavaExecutor {
@@ -22,7 +19,7 @@ public class Script3 implements JavaExecutor {
     public List<CustomAction<?>> execute(ExecuteContext executeContext) {
         List<CustomAction<?>> customActions = new ArrayList<>();
         CustomAction<ReportAlertCustomVo> reportAlert = CustomManager.build(CustomActionTypeEnum.REPORT_ALERT);
-        reportAlert.setCustomActionInfo(new ReportAlertCustomVo("preparePay接口异常, 第一次修改"));
+        reportAlert.setCustomActionInfo(new ReportAlertCustomVo("preparePay接口异常, 第二次修改"));
         customActions.add(reportAlert);
         return customActions;
     }
