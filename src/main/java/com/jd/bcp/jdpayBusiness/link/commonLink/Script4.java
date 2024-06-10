@@ -7,6 +7,7 @@ import com.jd.bcp.export.custom.ReportAlertCustomVo;
 import com.jd.bcp.export.enums.CustomActionTypeEnum;
 import com.jd.bcp.export.service.JavaExecutor;
 import com.jd.bcp.export.vo.ExecuteContext;
+import com.jd.bcp.jdpayBusiness.common.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class Script4 implements JavaExecutor {
     public List<CustomAction<?>> execute(ExecuteContext executeContext) {
         List<CustomAction<?>> customActions = new ArrayList<>();
         CustomAction<ReportAlertCustomVo> reportAlert = CustomManager.build(CustomActionTypeEnum.REPORT_ALERT);
-        reportAlert.setCustomActionInfo(new ReportAlertCustomVo("pay接口异常, 第一次修改"));
+        reportAlert.setCustomActionInfo(new ReportAlertCustomVo(new User() + "pay接口第二次修改"));
         customActions.add(reportAlert);
         return customActions;
     }
