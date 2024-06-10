@@ -1,4 +1,4 @@
-package com.jd.bcp.jdpayBusiness.link.baitiaoQuickLink;
+package com.jd.bcp.jdpayBusiness.link.commonLink;
 
 import com.jd.bcp.export.annotation.NodeScript;
 import com.jd.bcp.export.custom.CustomAction;
@@ -7,15 +7,12 @@ import com.jd.bcp.export.custom.ReportAlertCustomVo;
 import com.jd.bcp.export.enums.CustomActionTypeEnum;
 import com.jd.bcp.export.service.JavaExecutor;
 import com.jd.bcp.export.vo.ExecuteContext;
-import com.jd.bcp.jdpayBusiness.common.User;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @NodeScript(nodeId = "pay")
-public class Script2 implements JavaExecutor {
+public class Script4 implements JavaExecutor {
 
     @Override
     public List<CustomAction<?>> execute(ExecuteContext executeContext) {

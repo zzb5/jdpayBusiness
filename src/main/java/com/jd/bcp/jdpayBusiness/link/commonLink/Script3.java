@@ -3,6 +3,9 @@ package com.jd.bcp.jdpayBusiness.link.commonLink;
 
 import com.jd.bcp.export.annotation.NodeScript;
 import com.jd.bcp.export.custom.CustomAction;
+import com.jd.bcp.export.custom.CustomManager;
+import com.jd.bcp.export.custom.ReportAlertCustomVo;
+import com.jd.bcp.export.enums.CustomActionTypeEnum;
 import com.jd.bcp.export.service.JavaExecutor;
 import com.jd.bcp.export.vo.ExecuteContext;
 import com.jd.bcp.jdpayBusiness.common.User;
@@ -18,12 +21,9 @@ public class Script3 implements JavaExecutor {
     @Override
     public List<CustomAction<?>> execute(ExecuteContext executeContext) {
         List<CustomAction<?>> customActions = new ArrayList<>();
-        CustomAction<User> userCustomAction = new CustomAction<>();
-        customActions.add(userCustomAction);
-        User user = new User();
-        user.setName("Script3");
-        userCustomAction.setCustomActionInfo(user);
-        userCustomAction.setCustomActionType("user");
+        CustomAction<ReportAlertCustomVo> reportAlert = CustomManager.build(CustomActionTypeEnum.REPORT_ALERT);
+        reportAlert.setCustomActionInfo(new ReportAlertCustomVo("preparePay接口异常"));
+        customActions.add(reportAlert);
         return customActions;
     }
 }
