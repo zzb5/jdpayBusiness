@@ -18,7 +18,7 @@ public class Script4 implements JavaExecutor {
     public List<CustomAction<?>> execute(ExecuteContext executeContext) {
         List<CustomAction<?>> customActions = new ArrayList<>();
         CustomAction<ReportAlertCustomVo> reportAlert = CustomManager.build(CustomActionTypeEnum.REPORT_ALERT);
-        reportAlert.setCustomActionInfo(new ReportAlertCustomVo("pay接口第四次修改"));
+        reportAlert.setCustomActionInfo(new ReportAlertCustomVo("pay接口第五次修改"));
         customActions.add(reportAlert);
         return customActions;
     }
