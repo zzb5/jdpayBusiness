@@ -19,7 +19,7 @@ public class jdpaySdkPay implements JavaExecutor {
         String jdpaySdkPay = executeContext.getLinkDataMap().get("jdpaySdkPay");
         if ("jdCommonPay".equals(jdpaySdkPay)) {
             CustomAction<ReportAlertCustomVo> reportAlert = CustomManager.build(CustomActionTypeEnum.REPORT_ALERT);
-            reportAlert.setCustomActionInfo(new ReportAlertCustomVo("pay接口异常, 第三次修改"));
+            reportAlert.setCustomActionInfo(new ReportAlertCustomVo("pay接口异常, 第四次修改"));
             customActions.add(reportAlert);
         }
         return customActions;
