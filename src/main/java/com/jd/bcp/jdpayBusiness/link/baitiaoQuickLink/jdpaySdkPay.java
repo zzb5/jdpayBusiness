@@ -1,4 +1,4 @@
-package com.jd.bcp.jdpayBusiness.link.commonLink;
+package com.jd.bcp.jdpayBusiness.link.baitiaoQuickLink;
 
 import com.jd.bcp.export.annotation.NodeScript;
 import com.jd.bcp.export.custom.CustomAction;
@@ -11,14 +11,13 @@ import com.jd.bcp.export.vo.ExecuteContext;
 import java.util.ArrayList;
 import java.util.List;
 
-@NodeScript(nodeId = "pay")
-public class Script4 implements JavaExecutor {
+public class jdpaySdkPay implements JavaExecutor {
 
     @Override
     public List<CustomAction<?>> execute(ExecuteContext executeContext) {
         List<CustomAction<?>> customActions = new ArrayList<>();
         CustomAction<ReportAlertCustomVo> reportAlert = CustomManager.build(CustomActionTypeEnum.REPORT_ALERT);
-        reportAlert.setCustomActionInfo(new ReportAlertCustomVo("pay接口异常, 第三次修改"));
+        reportAlert.setCustomActionInfo(new ReportAlertCustomVo("pay接口异常"));
         customActions.add(reportAlert);
         return customActions;
     }
