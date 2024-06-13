@@ -16,9 +16,12 @@ public class jdpaySdkPay implements JavaExecutor {
     @Override
     public List<CustomAction<?>> execute(ExecuteContext executeContext) {
         List<CustomAction<?>> customActions = new ArrayList<>();
-        CustomAction<ReportAlertCustomVo> reportAlert = CustomManager.build(CustomActionTypeEnum.REPORT_ALERT);
-        reportAlert.setCustomActionInfo(new ReportAlertCustomVo("pay接口异常, 第三次修改"));
-        customActions.add(reportAlert);
+        String jdpaySdkPay = executeContext.getLinkDataMap().get("jdpaySdkPay");
+        if ("jdCommonPay".equals(jdpaySdkPay)) {
+            CustomAction<ReportAlertCustomVo> reportAlert = CustomManager.build(CustomActionTypeEnum.REPORT_ALERT);
+            reportAlert.setCustomActionInfo(new ReportAlertCustomVo("pay接口异常, 第三次修改"));
+            customActions.add(reportAlert);
+        }
         return customActions;
     }
 }
